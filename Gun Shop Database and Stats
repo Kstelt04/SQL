@@ -1,0 +1,32 @@
+CREATE TABLE gun_shop (id INTEGER PRIMARY KEY, name TEXT, type TEXT, price INTEGER, inventory INTEGER);
+INSERT INTO gun_shop VALUES
+(1,"Glock 43", "subcompact", 420, 4),
+(2,"M&P Shield", "compact", 350, 6),
+(3,"Taurus G3X", "hybrid", 280, 11),
+(4,"Ruger Max-9", "compact", 375, 3),
+(5,"Walther PDP", "compact", 400, 5),
+(6,"Berreta APX", "full_size", 410, 2),
+(7,"Mossberg MC2c", "compact", 380, 7),
+(8,"Glock 17", "full_size", 450, 8),
+(9,"Sig Sauer P320", "compact", 510, 4),
+(10,"Ruger LCP", "subcompact", 385, 10),
+(11,"Canik Mete 9", "compact", 405, 5),
+(12,"CZ P-10c", "compact", 390, 1),
+(13,"Taurus G3XL", "fullsize", 385, 7),
+(14,"Glock 45", "hybrid", 425, 5),
+(15,"Ruger Security-9", "subcompact", 410, 6);
+
+-- Display database sorted by price--
+SELECT*FROM gun_shop ORDER BY price;
+
+--What is the highest priced item in shop--
+SELECT name, MAX(price) FROM gun_shop;
+
+--What is the total of all items in the shop--
+SELECT SUM(inventory) FROM gun_shop;
+
+--What is the average price of all items in the shop--
+SELECT AVG(price) FROM gun_shop;
+
+--Display all items in the shop that are less than $400, and display them in descending order by price--
+SELECT*FROM gun_shop WHERE price <400 ORDER BY price desc
